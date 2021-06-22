@@ -2,13 +2,14 @@
   "name": "memory-game",
   "version": "1.0.0",
   "description": "GAME REQUIREMENTS",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Natalie Smyth",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "node": "^16.3.0"
   }
 }
