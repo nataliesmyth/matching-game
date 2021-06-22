@@ -1,0 +1,14 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "GAME REQUIREMENTS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Natalie Smyth",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^16.3.0"
+  }
+}
