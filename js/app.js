@@ -43,11 +43,11 @@ function shuffle(array) {
 };
 
 
-// @description shuffles cards when page is refreshed / loads
+// shuffles cards when page is refreshed / loads
 document.body.onload = startGame();
 
 
-// @description function to start a new play 
+// function to start a new play 
 function startGame(){
  
     // empty the openCards array
@@ -84,7 +84,7 @@ function startGame(){
 }
 
 
-// @description toggle card display
+// toggle card display
 let displayCard = function (){
     this.classList.toggle("open");
     this.classList.toggle("show");
@@ -92,7 +92,7 @@ let displayCard = function (){
 };
 
 
-// @description add clicked cards to OpenedCards
+// add clicked cards to OpenedCards
 function cardOpen() {
     openedCards.push(this);
     let len = openedCards.length;
@@ -108,7 +108,7 @@ function cardOpen() {
 };
 
 
-// @description fired when two cards match
+// fired when two cards match
 function matched(){
     openedCards[0].classList.add("match", "disabled");
     openedCards[1].classList.add("match", "disabled");
@@ -118,7 +118,7 @@ function matched(){
 }
 
 
-// @description fired when cards don't match
+// fired when cards don't match
 function unmatched(){
     openedCards[0].classList.add("unmatched");
     openedCards[1].classList.add("unmatched");
@@ -132,7 +132,7 @@ function unmatched(){
 }
 
 
-// @description disable cards temporarily
+// disable cards temporarily
 function disable(){
     Array.prototype.filter.call(cards, function(card){
         card.classList.add('disabled');
@@ -140,7 +140,7 @@ function disable(){
 }
 
 
-// @description enable cards and disable matched cards
+// enable cards and disable matched cards
 function enable(){
     Array.prototype.filter.call(cards, function(card){
         card.classList.remove('disabled');
@@ -151,7 +151,7 @@ function enable(){
 }
 
 
-// @description move counter
+// move counter
 function moveCounter(){
     moves++;
     counter.innerHTML = moves;
@@ -180,7 +180,7 @@ function moveCounter(){
 }
 
 
-// @description game timer
+// game timer
 let second = 0, minute = 0; hour = 0;
 let timer = document.querySelector(".timer");
 let interval;
@@ -200,7 +200,7 @@ function startTimer(){
 }
 
 
-// @description congratulations when all cards match, show modal and moves, time and rating
+// congratulations when all cards match, show modal and moves, time and rating
 function congratulations(){
     if (matchedCard.length == 16){
         clearInterval(interval);
@@ -223,7 +223,7 @@ function congratulations(){
 }
 
 
-// @description close icon on modal
+// close icon on modal
 function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
