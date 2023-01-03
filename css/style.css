@@ -22,27 +22,31 @@ body {
 	font-size: 16px;
 }
 
-.collapse {
+.h1, h2 {
+	text-align: center;
+}
+
+/* .collapse {
     &:not(.show) {
       display: none;
     }
   }
-  
-  .collapsing {
+    .collapsing {
     height: 0;
     overflow: hidden;
     @include transition($transition-collapse);
-  }
+  } */
 
-/* .container {
+.container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-} */
+}
 
 
 .deck {
+	margin: 0 auto;
 	width: 85%;
 	background: #716F71;
 	padding: 1rem;
@@ -61,7 +65,7 @@ body {
 	margin: 0.2rem 0.2rem;
 	background: #141214;;
 	font-size: 0;
-	color: #f3f3f3;
+	color: black;
 	border-radius: 5px;
 	cursor: pointer;
 	display: flex;
@@ -318,6 +322,7 @@ body {
 	.deck {
 		width: 660px;
 		height: 680px;
+		margin: 0 auto;
 	}
 
 	.deck .card {
