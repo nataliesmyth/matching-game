@@ -24,12 +24,12 @@ let matchedCard = document.getElementsByClassName("match");
  let modal = document.getElementById("popup1")
 
  // Array to hold clicked cards
-var openedCards = [];
+let openedCards = [];
 
 
 // Fisher-Yates (aka Knuth) Shuffle
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -56,7 +56,7 @@ function startGame(){
     // shuffle deck
     cards = shuffle(cards);
     // remove all exisiting classes from each card
-    for (var i = 0; i < cards.length; i++){
+    for (let i = 0; i < cards.length; i++){
         deck.innerHTML = "";
         [].forEach.call(cards, function(item) {
             deck.appendChild(item);
@@ -69,23 +69,23 @@ function startGame(){
     counter.innerHTML = moves;
 
     // reset rating
-    for (var i= 0; i < stars.length; i++){
+    for (let i= 0; i < stars.length; i++){
         stars[i].style.color = "#FFD700";
         stars[i].style.visibility = "visible";
     }
 
     //reset timer
-    second = 0;
-    minute = 0; 
-    hour = 0;
-    var timer = document.querySelector(".timer");
-    timer.innerHTML = "0 mins 0 secs";
-    clearInterval(interval);
+    // let timer = document.querySelector(".timer");
+    // timer.innerHTML = "0 mins 0 secs";
+    // clearInterval(interval);
+    // second = 0;
+    // minute = 0; 
+    // hour = 0;
 }
 
 
 // @description toggle card display
-var displayCard = function (){
+let displayCard = function (){
     this.classList.toggle("open");
     this.classList.toggle("show");
     this.classList.toggle("disabled");
@@ -95,7 +95,7 @@ var displayCard = function (){
 // @description add clicked cards to OpenedCards
 function cardOpen() {
     openedCards.push(this);
-    var len = openedCards.length;
+    let len = openedCards.length;
     if(len === 2){
         moveCounter();
         // check for match and act accordingly
@@ -144,7 +144,7 @@ function disable(){
 function enable(){
     Array.prototype.filter.call(cards, function(card){
         card.classList.remove('disabled');
-        for(var i = 0; i < matchedCard.length; i++){
+        for(let i = 0; i < matchedCard.length; i++){
             matchedCard[i].classList.add("disabled");
         }
     });
@@ -164,7 +164,7 @@ function moveCounter(){
     }
     // setting rates based on moves
     if (moves > 8 && moves < 12){
-        for( i= 0; i < 3; i++){
+        for( let i = 0; i < 3; i++){
             if(i > 1){
                 stars[i].style.visibility = "collapse";
             }
@@ -181,9 +181,9 @@ function moveCounter(){
 
 
 // @description game timer
-var second = 0, minute = 0; hour = 0;
+let second = 0, minute = 0; hour = 0;
 let timer = document.querySelector(".timer");
-var interval;
+let interval;
 function startTimer(){
     interval = setInterval(function(){
         timer.innerHTML = minute+"mins "+second+"secs";
@@ -210,7 +210,7 @@ function congratulations(){
         modal.classList.add("show");
 
         // declare star rating variable
-        var starRating = document.querySelector(".stars").innerHTML;
+        let starRating = document.querySelector(".stars").innerHTML;
 
         //showing move, rating, time on modal
         document.getElementById("finalMove").innerHTML = moves;
@@ -240,7 +240,7 @@ function playAgain(){
 
 
 // loop to add event listeners to each card
-for (var i = 0; i < cards.length; i++){
+for (let i = 0; i < cards.length; i++){
     card = cards[i];
     card.addEventListener("click", displayCard);
     card.addEventListener("click", cardOpen);
